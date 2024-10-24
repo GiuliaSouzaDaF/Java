@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>giuleisca popozuda</title>
+</head>
+<body style="text-align: center;">
+    <!--consegue comentar-->
+    <h1>i love comands</h1>
+    <p>paragrafo huehue</p>
+    <label for="nome">Nome:</label>
+    <input id="nome" placeholder="ex:fulaninha" type="text"><br><br>
+    <button onclick="receberNome()">enviar</button><br><br>
+    <p>clique aqui para par ou impar</p>
+    <button onclick="parOuImpar()">par ou impar</button><br>
+    <p>clique aqui para verificar um local</p>
+    <button onclick="calcVolume()">calcular volume</button><br>
+    <p>clique aqui para calcular media</p>
+    <button onclick="calcMedia()">calcular media</button><br>
+    <p>clique aqui para calcular sua pesca</p>
+    <button onclick="calcPesca()">verificar pesca</button><br>
+    <p>clique aqui para fazer conversao de temperatura</p>
+    <button onclick="converTemp()">conversao de temperatura</button><br>
+    <button onclick="pagCalcMed()">Media System</button>
+    <script>
+        function receberNome(){
+            let nome = document.getElementById("nome").value 
+            let ano = prompt("bem vindo á i love comands," +nome+ "digite seu ano de nascimento")
+            if(2024 - ano>17){
+                alert("voce é de maior hihi, pois tem" + (2024-ano)+"anos")
+            }
+            else{
+                alert("voce é menor de idade pirralho, pois tem" + (2024-ano)+"anos")
+            }
+        } 
+        function parOuImpar(){
+            let n = prompt("digite um numero:");
+            if (n%2==0){
+                alert("o numero é par, ein!");
+            }
+            else{
+                alert("o numero é impar, ein!");
+            }
+        }
+        function calcVolume(){
+            let volume = Number(prompt("digite o volume"));
+            let altura = Number(prompt("digite a altura"));
+            let comprimento = Number(prompt("digite o comprimento"));
+            let largura = Number(prompt("digite a largura"));
+            volume = comprimento * altura * largura
+
+            alert("o volume do seu movel é "+ volume)
+        }
+        function calcMedia(){
+            let media
+            let n1=Number(prompt("digite a primeira nota"));
+            let n2=Number(prompt("digite a segunda nota"));
+            media=(n1+n2)/2;
+            alert("a media é: "+media)
+        }
+        function calcPesca(){
+            let multa,diferença
+            let pesoPermitido=Number(prompt("digite peso permitido para pesca"));
+            let quantidadePesca=Number(prompt("digite a quantidade pescada"));
+            let multaPorPeso=Number(prompt("digite o valor da multa por kg de peixe"));
+
+            if(quantidadePesca>pesoPermitido){
+                diferença=quantidadePesca-pesoPermitido;
+                multa=diferença*multaPorPeso
+                alert("o peso excedeu em" +diferença+ "kg, portanto devera pagar multa de R$+multa");
+                
+            }
+            else{
+                alert("o peso está legalizado")
+                
+            }
+        }
+        function converTemp(){
+            let r 
+            let opcao = Number(prompt("digite 1: para celsius para fahrenheit\ndigite 2: fahrenheit para celsius\n"+
+            "digite 3: celsius para kelvin\ndigite 4: para kelvin para celsius\n"+
+            "digite 5: fahrenheit para kelvin\ndigite 6: para kelvin para fahrenheit"))
+            if(opcao==1){
+                let temp=Number(prompt("digite a temperatura que deseja converter"))
+                r=(temp*1.8)+32
+                alert("o resultado da conversao é:"+ r +"f")
+             }
+             else if(opcao==2){
+                let temp=Number(prompt("digite a temperatura que deseja converter"))
+                r=(temp-32)/1.8
+                alert("o resultado da conversao é:" + r +"c")
+             }
+             else if(opcao==3){
+                let temp=Number(prompt("digite a temperatura que deseja converter"))
+                r=temp+273.15
+                alert("o resultado da conversao é: "+r+ "k")
+             }
+             else{
+                alert("opcao invalida")
+             }
+             
+             }
+             function pagCalcMed(){
+                window.location.href = "mediasystem.html";
+                // window.open("mediasystem.html");
+             }
+
+             
+    </script>
+</html>
